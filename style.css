@@ -1,0 +1,227 @@
+:root { 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    color: #f6f6f6; 
+    background: #0c1823; 
+}
+
+* { box-sizing: border-box; }
+
+body { 
+    margin: 0; 
+    min-height: 100vh; 
+    background: radial-gradient(ellipse at 50% 0%, #224a51, #101e2b 55%, #09121b); }
+
+.conteneur { 
+    max-width: 1250px; 
+    margin: 0 auto; 
+    padding: 55px 22px 90px; 
+}
+
+.entete { 
+    text-align: center; 
+    margin-bottom: 48px; 
+}
+
+.sur-titre { 
+    letter-spacing: .3em; 
+    font-size: .75rem; 
+    color: #e9c87e; 
+    font-weight: 700; 
+}
+
+h1 { 
+    margin: 12px 0 10px; 
+    font-size: clamp(2rem, 4vw, 3.4rem); 
+}
+
+.entete p { 
+    margin: 0; 
+    color: #b7cad0; 
+}
+
+.grille-cartes { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    justify-items: center; 
+    gap: 36px 24px; 
+}
+
+.carte-joueur { 
+    width: 100%; 
+    max-width: 285px; 
+    aspect-ratio: 0.71; 
+    padding: 7px; 
+    position: relative; 
+    isolation: isolate; 
+    clip-path: polygon(50% 0, 90% 8%, 100% 19%, 100% 78%, 83% 94%, 50% 100%, 17% 94%, 0 78%, 0 19%, 10% 8%); 
+    background: linear-gradient(135deg, #fff2ba 0%, #bf8835 24%, #fff0ad 47%, #a16b2e 74%, #fff4c4 100%); 
+    filter: drop-shadow(0 12px 12px #0008); 
+    transition: transform .2s ease; 
+}
+
+.carte-joueur:hover { 
+    transform: translateY(-8px); 
+}
+
+.carte-interieur { 
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+    overflow: hidden; 
+    clip-path: inherit; 
+    background: radial-gradient(ellipse at 73% 25%, #ffefb3 0, #e4bb60 36%, #bb8237 75%, #a76c27 100%); 
+    color: #36270e; 
+}
+
+.carte-interieur::before { 
+    content: ''; position: absolute; 
+    inset: 0; opacity: .28; 
+    background: repeating-linear-gradient(125deg, transparent 0 24px, #fff7cf 25px 26px, transparent 27px 50px); 
+}
+
+.identite { 
+    position: absolute; 
+    z-index: 2; 
+    top: 19%; 
+    left: 12%; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 3px; 
+    width: 55px; 
+    text-align: center; 
+}
+
+.note { 
+    font-size: 2.45rem; 
+    line-height: 1; 
+    font-weight: 900; 
+}
+
+.poste { 
+    font-size: 1.15rem; 
+    font-weight: 800; 
+}
+
+.drapeau { 
+    font-size: 1.5rem; 
+    margin-top: 7px; 
+}
+
+.club { 
+    font-size: .64rem; 
+    line-height: 1.1; 
+    font-weight: 800; 
+    max-width: 70px; 
+    text-transform: uppercase; 
+}
+
+.portrait { 
+    position: absolute; 
+    top: 13%; 
+    right: 5%; 
+    width: 74%; 
+    height: 52%; 
+    overflow: hidden; 
+    display: grid; 
+    place-items: end center; 
+}
+
+.portrait img { 
+    display: block; 
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
+    object-position: bottom; 
+    border-radius: 50%;
+}
+
+.silhouette { 
+    position: relative; 
+    width: 100%; 
+    height: 100%; 
+    opacity: .8; 
+}
+
+.tete { 
+    position: absolute; 
+    top: 11%; 
+    left: 49%; 
+    transform: translateX(-50%); 
+    width: 37%; 
+    aspect-ratio: .86; 
+    border-radius: 48% 48% 43% 43%; 
+    background: linear-gradient(110deg, #6d5130, #a77c47 55%, #594020); 
+    box-shadow: inset -12px 0 #0002; 
+}
+
+.epaules { 
+    position: absolute; 
+    bottom: -28%; 
+    left: 9%; 
+    width: 84%; 
+    height: 65%; 
+    border-radius: 45% 45% 0 0; 
+    background: linear-gradient(100deg, #26394a, #4d6b75 50%, #182b3b); 
+}
+
+.details { 
+    position: absolute; 
+    z-index: 3; 
+    left: 8%; 
+    right: 8%; 
+    bottom: 12%; 
+    text-align: center; }
+
+.details h2 { 
+    font-size: 1.24rem; 
+    line-height: 1.15; 
+    margin: 0 0 10px; 
+    text-transform: uppercase; 
+    font-weight: 900; 
+    min-height: 1.5em; 
+}
+
+.separateur { 
+    width: 83%; 
+    margin: 0 auto 10px; 
+    border-top: 1px solid #77501f80; 
+}
+
+.statistiques { 
+    display: grid; 
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+    grid-template-rows: repeat(3, 1fr); 
+    grid-auto-flow: column; 
+    column-gap: 14px; 
+    row-gap: 5px; 
+    max-width: 200px; 
+    margin: auto; 
+}
+
+.stat { 
+    display: flex; 
+    align-items: baseline; 
+    justify-content: center; 
+    gap: 6px; 
+    font-size: .85rem; 
+}
+
+.stat strong { 
+    font-weight: 900; 
+    font-size: .95rem; 
+}
+
+.stat span { 
+    font-weight: 650; 
+    letter-spacing: .025em; 
+}
+
+@media (max-width: 590px) { 
+    .conteneur { 
+        padding-top: 35px; 
+    } 
+    .grille-cartes { 
+        gap: 24px; 
+    } 
+}
