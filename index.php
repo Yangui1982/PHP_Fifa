@@ -154,7 +154,7 @@ $joueurs = [
     <main class="conteneur">
         <header class="entete">
             <span class="sur-titre">ULTIMATE TEAM · SIO</span>
-            <h1>Collection de élèves</h1>
+            <h1>Collection des élèves</h1>
             <!-- <p>Une carte est créée automatiquement pour chaque élément du tableau PHP.</p> -->
         </header>
 
